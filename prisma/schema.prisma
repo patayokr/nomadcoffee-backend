@@ -10,8 +10,13 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Menu {
-  id    Int    @id @default(autoincrement())
-  name  String
-  price Int
+model User {
+  id             Int     @id @default(autoincrement())
+  username       String  @unique
+  email          String  @unique
+  name           String
+  location       String?
+  password       String
+  avatarUrl      String?
+  githubUsername String?
 }
